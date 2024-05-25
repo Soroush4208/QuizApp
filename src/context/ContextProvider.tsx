@@ -12,12 +12,14 @@ interface InitialStateType {
   arrayQuestions: Question[];
   page: number;
   index: number;
+  score: number;
 }
 
 // تعریف تایپ برای اکشن‌های ریدیوسر
 type ActionType =
   | { type: "QUESTION"; payload: Question[] }
   | { type: "PAGE"; payload: number }
+  | { type: "SCORE"; payload: number }
   | { type: "QUESTION_INDEX" };
 
 // تعریف تایپ برای تابع ریدیوسر
@@ -31,6 +33,7 @@ const initialState: InitialStateType = {
   arrayQuestions: [],
   page: 0,
   index: 0,
+  score: 0,
 };
 
 // تابع ریدیوسر
@@ -45,6 +48,8 @@ function reducerQuestions(
       return { ...state, page: action.payload };
     case "QUESTION_INDEX":
       return { ...state, index: state.index + 1 };
+    case "SCORE":
+      return { ...state, score: action.payload};
     default:
       return state;
   }
