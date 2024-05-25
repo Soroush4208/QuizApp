@@ -15,7 +15,16 @@
 .font-Quiz{
   font-family: BungeeShade-Regular;
 }
-body {
+
+@font-face {
+  font-family: kalam;
+  src: url(./assets/fonts/Kalam/Kalam-Light.ttf);
+  src: url(./assets/fonts/Kalam/Kalam-Bold.ttf);
+}
+.font-question{
+  font-family: kalam;
+}
+.theme-body-light {
   background-image: radial-gradient(
     circle at top right,
     rgb(13, 141, 190) 0%,
@@ -28,6 +37,21 @@ body {
     rgb(40, 178, 231) 54%,
     rgb(49, 190, 244) 54%,
     rgb(49, 190, 244) 100%
+  );
+}
+.theme-body-dark {
+  background-image: radial-gradient(
+    circle at top right,
+    rgb(9, 11, 12) 0%,
+    rgb(48, 49, 49) 46%,
+    rgb(44, 44, 45) 46%,
+    rgb(40, 40, 40) 49%,
+    rgb(52, 52, 53) 49%,
+    rgb(66, 67, 67) 52%,
+    rgb(61, 61, 62) 52%,
+    rgb(37, 37, 38) 54%,
+    rgb(48, 50, 51) 54%,
+    rgb(70, 70, 70) 100%
   );
 }
 
@@ -236,4 +260,10 @@ body {
       transparent 100%
     ),
     linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
