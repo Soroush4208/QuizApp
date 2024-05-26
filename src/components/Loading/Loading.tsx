@@ -8,7 +8,7 @@ function Loading() {
         <img src={MAN_ICON} alt="Loading" className="rounded-full h-24 w-24" />
       </div>
 
-      <h1 className="fixed top-[60%] left-[39%] font-question">
+      <h1 className="fixed top-[60%] left-[39%] font-question animate-pulse">
         The page is loading, please wait...
       </h1>
     </div>

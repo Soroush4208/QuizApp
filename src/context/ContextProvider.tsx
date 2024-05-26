@@ -49,7 +49,7 @@ function reducerQuestions(
     case "QUESTION_INDEX":
       return { ...state, index: state.index + 1 };
     case "SCORE":
-      return { ...state, score: action.payload};
+      return { ...state, score: state.score +1};
     default:
       return state;
   }

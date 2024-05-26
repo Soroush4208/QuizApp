@@ -4,19 +4,34 @@ import Loading from "../Loading/Loading";
 
 function Quiz() {
   const { questionsState, questionsDispatch } = useContextQuestions();
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<string[]>([]);
+
+  //! (score/questionsState.arrayQuestions.length)*100
+
+  // useEffect(() => {
+  //   if (questionsState.arrayQuestions.length > 0) {
+  //     const answer = questionsState.arrayQuestions[
+  //       currentQuestionIndex
+  //     ].incorrect_answers.concat(
+  //       questionsState.arrayQuestions[currentQuestionIndex].correct_answer
+  //     );
+  //     setAnswers(answer);
+  //   }
+  // }, [currentQuestionIndex, questionsState.arrayQuestions]);
 
   useEffect(() => {
     if (questionsState.arrayQuestions.length > 0) {
       const answer = questionsState.arrayQuestions[
-        currentQuestionIndex
-      ].incorrect_answers.concat(
-        questionsState.arrayQuestions[currentQuestionIndex].correct_answer
-      );
+        questionsState.index
+      ].incorrect_answers
+        .concat(
+          questionsState.arrayQuestions[questionsState.index].correct_answer
+        )
+        .sort(() => Math.random() - 0.5); // برای مخلوط کردن جواب‌ها برای اینک همیشه گزینه آخر نباشه
       setAnswers(answer);
     }
-  }, [currentQuestionIndex, questionsState.arrayQuestions]);
+  }, [questionsState.index, questionsState.arrayQuestions]);
+  console.log(questionsState);
 
   // بررسی اینکه آیا سوالات وجود دارند
   if (
@@ -29,24 +44,31 @@ function Quiz() {
       </div>
     );
   }
-  let a = 1;
-  const handleNext = () => {
-    if (currentQuestionIndex < questionsState.arrayQuestions.length - 1) {
-      console.log(a++);
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+  console.log(answers);
+
+  function handleNext(e: React.MouseEvent<HTMLButtonElement>) {
+    if (questionsState.index < questionsState.arrayQuestions.length - 1) {
+      questionsDispatch({ type: "QUESTION_INDEX" });
     } else {
       questionsDispatch({ type: "PAGE", payload: 3 });
     }
-  };
 
-  const currentQuestion = questionsState.arrayQuestions[currentQuestionIndex];
+    if (
+      e.currentTarget.innerText ===
+      questionsState.arrayQuestions[questionsState.index].correct_answer
+    ) {
+      questionsDispatch({ type: "SCORE", payload: +1 });
+    }
+  }
+
+  const currentQuestion = questionsState.arrayQuestions[questionsState.index];
 
   return (
     <div className="flex flex-col justify-between py-4 h-full items-center">
-      <h1 className="font-bold text-3xl font-Quiz">Quiz</h1>
+      <h1 className="font-bold text-3xl font-Quiz animate-pulse">Quiz</h1>
       <div className="flex flex-col gap-4 w-full px-8 font-question font-bold">
         <h2 className="bg-white font-bold text-center text-sm p-4 rounded-lg border-4 border-dashed">
-          {currentQuestion.question}
+          {questionsState.index + 1} - {currentQuestion.question}
         </h2>
         <div className="flex flex-col gap-2 font-bold mb-12">
           {answers.map((answer, index) => (
