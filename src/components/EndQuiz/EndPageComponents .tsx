@@ -22,7 +22,9 @@ function EndPageComponents() {
             src={GREAT}
             alt="icon Result"
           />
-          <h1 className="text-lg text-red-500 font-question heartbeat">you are great</h1>
+          <h1 className="text-lg text-red-500 font-question heartbeat">
+            you are great
+          </h1>
         </div>
       ) : Percent > 60 ? (
         <div className="flex flex-col justify-center items-center ">
@@ -31,7 +33,9 @@ function EndPageComponents() {
             src={GOOD}
             alt="icon Result"
           />
-          <h1 className="text-lg text-red-500 font-question heartbeat">you are good</h1>
+          <h1 className="text-lg text-red-500 font-question heartbeat">
+            you are good
+          </h1>
         </div>
       ) : Percent >= 50 ? (
         <div className="flex flex-col justify-center items-center ">
@@ -47,7 +51,9 @@ function EndPageComponents() {
             src={TRY_MORE}
             alt="icon Result"
           />
-          <h1 className="text-lg text-red-500 font-question heartbeat">TRY MORE</h1>
+          <h1 className="text-lg text-red-500 font-question heartbeat">
+            TRY MORE
+          </h1>
         </div>
       ) : (
         ""
@@ -57,9 +63,7 @@ function EndPageComponents() {
       </p>
       <div className="flex flex-col justify-center items-center hover:scale-150 mt-2">
         <button
-          onClick={() => {
-            return questionsDispatch({ type: "PAGE", payload: 0 });
-          }}
+          onClick={() => questionsDispatch({ type: "PAGE", payload: 0 })}
           type="submit"
           className="flex items-center text-xl font-bold font-Quiz hover:text-green-600"
         >

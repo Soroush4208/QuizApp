@@ -45,11 +45,11 @@ function reducerQuestions(
     case "QUESTION":
       return { ...state, arrayQuestions: action.payload };
     case "PAGE":
-      return { ...state, page: action.payload };
+      return { ...state, page: action.payload, index: 0 };
     case "QUESTION_INDEX":
       return { ...state, index: state.index + 1 };
     case "SCORE":
-      return { ...state, score: state.score +1};
+      return { ...state, score: state.score + 1 };
     default:
       return state;
   }
