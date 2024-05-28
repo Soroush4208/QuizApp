@@ -1,7 +1,6 @@
-import StartQuiz from "../components/Home/StartQuiz"
+import StartQuiz from "../components/Home/StartQuiz";
 
 function StartPage() {
-  return <StartQuiz/>
+  return <StartQuiz />;
 }
-
-export default StartPage
+export default StartPage;

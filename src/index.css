@@ -12,10 +12,44 @@
   font-family: BungeeShade-Regular;
   src: url(./assets/fonts/Bungee_Shade/BungeeShade-Regular.ttf);
 }
-.font-Quiz{
+.font-Quiz {
   font-family: BungeeShade-Regular;
 }
-body {
+
+@font-face {
+  font-family: kalam;
+  src: url(./assets/fonts/Kalam/Kalam-Light.ttf);
+  src: url(./assets/fonts/Kalam/Kalam-Bold.ttf);
+}
+.font-question {
+  font-family: kalam;
+}
+@keyframes myAnimation {
+  0% {
+    color: green;
+  }
+  25% {
+    color: brown;
+  }
+  50% {
+    color: black;
+  }
+  75% {
+    color: brown;
+  }
+  100% {
+    color: green;
+  }
+}
+
+.animatedElement {
+  animation-name: myAnimation;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.theme-body-light {
   background-image: radial-gradient(
     circle at top right,
     rgb(13, 141, 190) 0%,
@@ -30,210 +64,248 @@ body {
     rgb(49, 190, 244) 100%
   );
 }
+.theme-body-mobile {
+  background-image: radial-gradient(
+    circle at top right,
+    rgb(80, 82, 83) 0%,
+    rgb(120, 121, 122) 46%,
+    rgb(115, 115, 116) 46%,
+    rgb(110, 110, 111) 49%,
+    rgb(122, 122, 123) 49%,
+    rgb(136, 137, 138) 52%,
+    rgb(131, 131, 132) 52%,
+    rgb(107, 107, 108) 54%,
+    rgb(118, 120, 121) 54%,
+    rgb(140, 140, 140) 100%
+  );
+}
 
-.background-Quiz {
-  background-image: linear-gradient(
-      72deg,
-      rgba(172, 172, 172, 0.03) 0%,
-      rgba(172, 172, 172, 0.03) 6%,
-      transparent 6%,
-      transparent 100%
-    ),
-    linear-gradient(
-      89deg,
-      rgba(230, 230, 230, 0.01) 0%,
-      rgba(230, 230, 230, 0.01) 49%,
-      transparent 49%,
-      transparent 100%
-    ),
-    linear-gradient(
-      300deg,
-      rgba(201, 201, 201, 0.02) 0%,
-      rgba(201, 201, 201, 0.02) 92%,
-      transparent 92%,
-      transparent 100%
-    ),
-    linear-gradient(
-      29deg,
-      rgba(95, 95, 95, 0.03) 0%,
-      rgba(95, 95, 95, 0.03) 62%,
-      transparent 62%,
-      transparent 100%
-    ),
-    linear-gradient(
-      27deg,
-      rgba(154, 154, 154, 0.02) 0%,
-      rgba(154, 154, 154, 0.02) 39%,
-      transparent 39%,
-      transparent 100%
-    ),
-    linear-gradient(
-      240deg,
-      rgba(142, 142, 142, 0.01) 0%,
-      rgba(142, 142, 142, 0.01) 92%,
-      transparent 92%,
-      transparent 100%
-    ),
-    linear-gradient(
-      284deg,
-      rgba(123, 123, 123, 0.01) 0%,
-      rgba(123, 123, 123, 0.01) 58%,
-      transparent 58%,
-      transparent 100%
-    ),
-    linear-gradient(
-      70deg,
-      rgba(90, 90, 90, 0.01) 0%,
-      rgba(90, 90, 90, 0.01) 68%,
-      transparent 68%,
-      transparent 100%
-    ),
-    linear-gradient(
-      322deg,
-      rgba(61, 61, 61, 0.02) 0%,
-      rgba(61, 61, 61, 0.02) 39%,
-      transparent 39%,
-      transparent 100%
-    ),
-    linear-gradient(
-      28deg,
-      rgba(106, 106, 106, 0.01) 0%,
-      rgba(106, 106, 106, 0.01) 33%,
-      transparent 33%,
-      transparent 100%
-    ),
-    linear-gradient(
-      8deg,
-      rgba(178, 178, 178, 0.01) 0%,
-      rgba(178, 178, 178, 0.01) 23%,
-      transparent 23%,
-      transparent 100%
-    ),
-    linear-gradient(
-      267deg,
-      rgba(248, 248, 248, 0.01) 0%,
-      rgba(248, 248, 248, 0.01) 22%,
-      transparent 22%,
-      transparent 100%
-    ),
-    linear-gradient(
-      13deg,
-      rgba(224, 224, 224, 0.02) 0%,
-      rgba(224, 224, 224, 0.02) 13%,
-      transparent 13%,
-      transparent 100%
-    ),
-    linear-gradient(
-      75deg,
-      rgba(10, 10, 10, 0.03) 0%,
-      rgba(10, 10, 10, 0.03) 21%,
-      transparent 21%,
-      transparent 100%
-    ),
-    linear-gradient(
-      93deg,
-      rgba(11, 11, 11, 0.01) 0%,
-      rgba(11, 11, 11, 0.01) 42%,
-      transparent 42%,
-      transparent 100%
-    ),
-    linear-gradient(
-      286deg,
-      rgba(247, 247, 247, 0.01) 0%,
-      rgba(247, 247, 247, 0.01) 85%,
-      transparent 85%,
-      transparent 100%
-    ),
-    linear-gradient(
-      275deg,
-      rgba(8, 8, 8, 0.01) 0%,
-      rgba(8, 8, 8, 0.01) 88%,
-      transparent 88%,
-      transparent 100%
-    ),
-    linear-gradient(
-      206deg,
-      rgba(141, 141, 141, 0.03) 0%,
-      rgba(141, 141, 141, 0.03) 2%,
-      transparent 2%,
-      transparent 100%
-    ),
-    linear-gradient(
-      190deg,
-      rgba(217, 217, 217, 0.02) 0%,
-      rgba(217, 217, 217, 0.02) 44%,
-      transparent 44%,
-      transparent 100%
-    ),
-    linear-gradient(
-      319deg,
-      rgba(57, 57, 57, 0.03) 0%,
-      rgba(57, 57, 57, 0.03) 46%,
-      transparent 46%,
-      transparent 100%
-    ),
-    linear-gradient(
-      46deg,
-      rgba(154, 154, 154, 0.01) 0%,
-      rgba(154, 154, 154, 0.01) 57%,
-      transparent 57%,
-      transparent 100%
-    ),
-    linear-gradient(
-      342deg,
-      rgba(48, 48, 48, 0.02) 0%,
-      rgba(48, 48, 48, 0.02) 66%,
-      transparent 66%,
-      transparent 100%
-    ),
-    linear-gradient(
-      309deg,
-      rgba(251, 251, 251, 0.03) 0%,
-      rgba(251, 251, 251, 0.03) 24%,
-      transparent 24%,
-      transparent 100%
-    ),
-    linear-gradient(
-      132deg,
-      rgba(10, 10, 10, 0.02) 0%,
-      rgba(10, 10, 10, 0.02) 26%,
-      transparent 26%,
-      transparent 100%
-    ),
-    linear-gradient(
-      92deg,
-      rgba(77, 77, 77, 0.03) 0%,
-      rgba(77, 77, 77, 0.03) 34%,
-      transparent 34%,
-      transparent 100%
-    ),
-    linear-gradient(
-      328deg,
-      rgba(122, 122, 122, 0.01) 0%,
-      rgba(122, 122, 122, 0.01) 88%,
-      transparent 88%,
-      transparent 100%
-    ),
-    linear-gradient(
-      238deg,
-      rgba(161, 161, 161, 0.01) 0%,
-      rgba(161, 161, 161, 0.01) 58%,
-      transparent 58%,
-      transparent 100%
-    ),
-    linear-gradient(
-      115deg,
-      rgba(29, 29, 29, 0.03) 0%,
-      rgba(29, 29, 29, 0.03) 88%,
-      transparent 88%,
-      transparent 100%
-    ),
-    linear-gradient(
-      95deg,
-      rgba(35, 35, 35, 0.01) 0%,
-      rgba(35, 35, 35, 0.01) 66%,
-      transparent 66%,
-      transparent 100%
-    ),
-    linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+@media screen and (min-width: 640px) {
+  .theme-body-dark {
+    background-image: radial-gradient(
+      circle at top right,
+      rgb(9, 11, 12) 0%,
+      rgb(48, 49, 49) 46%,
+      rgb(44, 44, 45) 46%,
+      rgb(40, 40, 40) 49%,
+      rgb(52, 52, 53) 49%,
+      rgb(66, 67, 67) 52%,
+      rgb(61, 61, 62) 52%,
+      rgb(37, 37, 38) 54%,
+      rgb(48, 50, 51) 54%,
+      rgb(70, 70, 70) 100%
+    );
+  }
+  .background-Quiz {
+    background-image: linear-gradient(
+        72deg,
+        rgba(172, 172, 172, 0.03) 0%,
+        rgba(172, 172, 172, 0.03) 6%,
+        transparent 6%,
+        transparent 100%
+      ),
+      linear-gradient(
+        89deg,
+        rgba(230, 230, 230, 0.01) 0%,
+        rgba(230, 230, 230, 0.01) 49%,
+        transparent 49%,
+        transparent 100%
+      ),
+      linear-gradient(
+        300deg,
+        rgba(201, 201, 201, 0.02) 0%,
+        rgba(201, 201, 201, 0.02) 92%,
+        transparent 92%,
+        transparent 100%
+      ),
+      linear-gradient(
+        29deg,
+        rgba(95, 95, 95, 0.03) 0%,
+        rgba(95, 95, 95, 0.03) 62%,
+        transparent 62%,
+        transparent 100%
+      ),
+      linear-gradient(
+        27deg,
+        rgba(154, 154, 154, 0.02) 0%,
+        rgba(154, 154, 154, 0.02) 39%,
+        transparent 39%,
+        transparent 100%
+      ),
+      linear-gradient(
+        240deg,
+        rgba(142, 142, 142, 0.01) 0%,
+        rgba(142, 142, 142, 0.01) 92%,
+        transparent 92%,
+        transparent 100%
+      ),
+      linear-gradient(
+        284deg,
+        rgba(123, 123, 123, 0.01) 0%,
+        rgba(123, 123, 123, 0.01) 58%,
+        transparent 58%,
+        transparent 100%
+      ),
+      linear-gradient(
+        70deg,
+        rgba(90, 90, 90, 0.01) 0%,
+        rgba(90, 90, 90, 0.01) 68%,
+        transparent 68%,
+        transparent 100%
+      ),
+      linear-gradient(
+        322deg,
+        rgba(61, 61, 61, 0.02) 0%,
+        rgba(61, 61, 61, 0.02) 39%,
+        transparent 39%,
+        transparent 100%
+      ),
+      linear-gradient(
+        28deg,
+        rgba(106, 106, 106, 0.01) 0%,
+        rgba(106, 106, 106, 0.01) 33%,
+        transparent 33%,
+        transparent 100%
+      ),
+      linear-gradient(
+        8deg,
+        rgba(178, 178, 178, 0.01) 0%,
+        rgba(178, 178, 178, 0.01) 23%,
+        transparent 23%,
+        transparent 100%
+      ),
+      linear-gradient(
+        267deg,
+        rgba(248, 248, 248, 0.01) 0%,
+        rgba(248, 248, 248, 0.01) 22%,
+        transparent 22%,
+        transparent 100%
+      ),
+      linear-gradient(
+        13deg,
+        rgba(224, 224, 224, 0.02) 0%,
+        rgba(224, 224, 224, 0.02) 13%,
+        transparent 13%,
+        transparent 100%
+      ),
+      linear-gradient(
+        75deg,
+        rgba(10, 10, 10, 0.03) 0%,
+        rgba(10, 10, 10, 0.03) 21%,
+        transparent 21%,
+        transparent 100%
+      ),
+      linear-gradient(
+        93deg,
+        rgba(11, 11, 11, 0.01) 0%,
+        rgba(11, 11, 11, 0.01) 42%,
+        transparent 42%,
+        transparent 100%
+      ),
+      linear-gradient(
+        286deg,
+        rgba(247, 247, 247, 0.01) 0%,
+        rgba(247, 247, 247, 0.01) 85%,
+        transparent 85%,
+        transparent 100%
+      ),
+      linear-gradient(
+        275deg,
+        rgba(8, 8, 8, 0.01) 0%,
+        rgba(8, 8, 8, 0.01) 88%,
+        transparent 88%,
+        transparent 100%
+      ),
+      linear-gradient(
+        206deg,
+        rgba(141, 141, 141, 0.03) 0%,
+        rgba(141, 141, 141, 0.03) 2%,
+        transparent 2%,
+        transparent 100%
+      ),
+      linear-gradient(
+        190deg,
+        rgba(217, 217, 217, 0.02) 0%,
+        rgba(217, 217, 217, 0.02) 44%,
+        transparent 44%,
+        transparent 100%
+      ),
+      linear-gradient(
+        319deg,
+        rgba(57, 57, 57, 0.03) 0%,
+        rgba(57, 57, 57, 0.03) 46%,
+        transparent 46%,
+        transparent 100%
+      ),
+      linear-gradient(
+        46deg,
+        rgba(154, 154, 154, 0.01) 0%,
+        rgba(154, 154, 154, 0.01) 57%,
+        transparent 57%,
+        transparent 100%
+      ),
+      linear-gradient(
+        342deg,
+        rgba(48, 48, 48, 0.02) 0%,
+        rgba(48, 48, 48, 0.02) 66%,
+        transparent 66%,
+        transparent 100%
+      ),
+      linear-gradient(
+        309deg,
+        rgba(251, 251, 251, 0.03) 0%,
+        rgba(251, 251, 251, 0.03) 24%,
+        transparent 24%,
+        transparent 100%
+      ),
+      linear-gradient(
+        132deg,
+        rgba(10, 10, 10, 0.02) 0%,
+        rgba(10, 10, 10, 0.02) 26%,
+        transparent 26%,
+        transparent 100%
+      ),
+      linear-gradient(
+        92deg,
+        rgba(77, 77, 77, 0.03) 0%,
+        rgba(77, 77, 77, 0.03) 34%,
+        transparent 34%,
+        transparent 100%
+      ),
+      linear-gradient(
+        328deg,
+        rgba(122, 122, 122, 0.01) 0%,
+        rgba(122, 122, 122, 0.01) 88%,
+        transparent 88%,
+        transparent 100%
+      ),
+      linear-gradient(
+        238deg,
+        rgba(161, 161, 161, 0.01) 0%,
+        rgba(161, 161, 161, 0.01) 58%,
+        transparent 58%,
+        transparent 100%
+      ),
+      linear-gradient(
+        115deg,
+        rgba(29, 29, 29, 0.03) 0%,
+        rgba(29, 29, 29, 0.03) 88%,
+        transparent 88%,
+        transparent 100%
+      ),
+      linear-gradient(
+        95deg,
+        rgba(35, 35, 35, 0.01) 0%,
+        rgba(35, 35, 35, 0.01) 66%,
+        transparent 66%,
+        transparent 100%
+      ),
+      linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
