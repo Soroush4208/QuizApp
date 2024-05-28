@@ -38,11 +38,7 @@ function Quiz() {
     !questionsState.arrayQuestions ||
     questionsState.arrayQuestions.length === 0
   ) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    );
+    return <Loading />;
   }
   console.log(answers);
 
@@ -50,14 +46,14 @@ function Quiz() {
     if (questionsState.index < questionsState.arrayQuestions.length - 1) {
       questionsDispatch({ type: "QUESTION_INDEX" });
     } else {
-      questionsDispatch({ type: "PAGE", payload: 3 });
+      questionsDispatch({ type: "CHANGE_PAGE", payload: 3 });
     }
 
     if (
       e.currentTarget.innerText ===
       questionsState.arrayQuestions[questionsState.index].correct_answer
     ) {
-      questionsDispatch({ type: "SCORE", payload: +1 });
+      questionsDispatch({ type: "ADD_SCORE", payload: +1 });
     }
   }
 

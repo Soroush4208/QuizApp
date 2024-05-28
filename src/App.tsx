@@ -1,26 +1,31 @@
-import StartQuiz from "./components/Home/StartQuiz";
-import { useContextQuestions } from "./context/ContextProvider";
 import Layout from "./layout/Layout";
-import EndPage from "./pages/EndPage";
-import QuizPage from "./pages/QuizPage";
-import SetupPage from "./pages/SetupPage";
+import { useContextQuestions } from "./context/ContextProvider";
+import { Suspense, lazy } from "react";
+import Loading from "./components/Loading/Loading";
+
+const StartQuiz = lazy(() => import("./components/Home/StartQuiz"));
+const SetupPage = lazy(() => import("./pages/SetupPage"));
+const QuizPage = lazy(() => import("./pages/QuizPage"));
+const EndPage = lazy(() => import("./pages/EndPage"));
 
 function App() {
   const { questionsState } = useContextQuestions();
 
   return (
     <Layout>
-      {questionsState.page === 0 ? (
-        <StartQuiz />
-      ) : questionsState.page === 1 ? (
-        <SetupPage />
-      ) : questionsState.page === 2 ? (
-        <QuizPage />
-      ) : questionsState.page === 3 ? (
-        <EndPage/>
-      ) : (
-        ""
-      )}
+      <Suspense fallback={<Loading />}>
+        {questionsState.page === 0 ? (
+          <StartQuiz />
+        ) : questionsState.page === 1 ? (
+          <SetupPage />
+        ) : questionsState.page === 2 ? (
+          <QuizPage />
+        ) : questionsState.page === 3 ? (
+          <EndPage />
+        ) : (
+          ""
+        )}
+      </Suspense>
     </Layout>
   );
 }

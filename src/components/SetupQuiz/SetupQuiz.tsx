@@ -19,7 +19,7 @@ function SetupQuiz() {
       const result = res.data.results;
       // setQuestions(res.data.results);
       console.log(result);
-      questionsDispatch({ type: "QUESTION", payload: result });
+      questionsDispatch({ type: "SET_QUESTION", payload: result });
       setAmount("");
       setCategory("");
       setDifficulty("");
@@ -31,13 +31,14 @@ function SetupQuiz() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const amountNum = +(amount);
+    console.log("11");
+    const amountNum = Number(amount);
     if (amountNum < 5 || amountNum > 55) {
       setValidation("Please Enter A Number Between 5 And 55");
     } else {
       setValidation("");
       getData();
-      questionsDispatch({ type: "PAGE", payload: 2 });
+      questionsDispatch({ type: "CHANGE_PAGE", payload: 2 });
     }
   };
 

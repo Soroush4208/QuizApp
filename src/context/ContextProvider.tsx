@@ -17,9 +17,10 @@ interface InitialStateType {
 
 // تعریف تایپ برای اکشن‌های ریدیوسر
 type ActionType =
-  | { type: "QUESTION"; payload: Question[] }
-  | { type: "PAGE"; payload: number }
-  | { type: "SCORE"; payload: number }
+  | { type: "SET_QUESTION"; payload: Question[] }
+  | { type: "CHANGE_PAGE"; payload: number }
+  | { type: "START_AGAIN"; payload: number }
+  | { type: "ADD_SCORE"; payload: number }
   | { type: "QUESTION_INDEX" };
 
 // تعریف تایپ برای تابع ریدیوسر
@@ -42,14 +43,24 @@ function reducerQuestions(
   action: ActionType
 ): InitialStateType {
   switch (action.type) {
-    case "QUESTION":
+    case "SET_QUESTION":
       return { ...state, arrayQuestions: action.payload };
-    case "PAGE":
-      return { ...state, page: action.payload, index: 0 };
+    case "CHANGE_PAGE":
+      return {
+        ...state,
+        page: action.payload,
+      };
     case "QUESTION_INDEX":
       return { ...state, index: state.index + 1 };
-    case "SCORE":
+    case "ADD_SCORE":
       return { ...state, score: state.score + 1 };
+    case "START_AGAIN":
+      return {
+        ...state,
+        page: action.payload,
+        index: 0,
+        score: 0,
+      };
     default:
       return state;
   }

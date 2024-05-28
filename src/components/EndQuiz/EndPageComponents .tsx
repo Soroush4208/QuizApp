@@ -7,6 +7,8 @@ import TRY_MORE from "../../assets/svg/more.svg";
 
 function EndPageComponents() {
   const { questionsState, questionsDispatch } = useContextQuestions();
+console.log(questionsState.score ,questionsState.arrayQuestions.length);
+console.log(questionsState);
 
   const Percent = Math.round(
     (questionsState.score / questionsState.arrayQuestions.length) * 100
@@ -18,7 +20,7 @@ function EndPageComponents() {
       {Percent > 80 ? (
         <div className="flex flex-col justify-center items-center ">
           <img
-            className="rounded-full my-5 w-16"
+            className="rounded-full my-5 w-20"
             src={GREAT}
             alt="icon Result"
           />
@@ -29,7 +31,7 @@ function EndPageComponents() {
       ) : Percent > 60 ? (
         <div className="flex flex-col justify-center items-center ">
           <img
-            className="rounded-full my-5 w-16"
+            className="rounded-full my-5 w-20"
             src={GOOD}
             alt="icon Result"
           />
@@ -39,7 +41,7 @@ function EndPageComponents() {
         </div>
       ) : Percent >= 50 ? (
         <div className="flex flex-col justify-center items-center ">
-          <img className="rounded-full my-5 w-16" src={BAD} alt="icon Result" />
+          <img className="rounded-full my-5 w-20" src={BAD} alt="icon Result" />
           <h1 className="text-lg text-red-500 font-question heartbeat">
             you are not bad
           </h1>
@@ -47,7 +49,7 @@ function EndPageComponents() {
       ) : Percent < 50 ? (
         <div className="flex flex-col justify-center items-center ">
           <img
-            className="rounded-full my-5 w-16"
+            className="rounded-full my-5 w-20"
             src={TRY_MORE}
             alt="icon Result"
           />
@@ -63,7 +65,7 @@ function EndPageComponents() {
       </p>
       <div className="flex flex-col justify-center items-center hover:scale-150 mt-2">
         <button
-          onClick={() => questionsDispatch({ type: "PAGE", payload: 0 })}
+          onClick={() => questionsDispatch({ type: "START_AGAIN", payload: 0 })}
           type="submit"
           className="flex items-center text-xl font-bold font-Quiz hover:text-green-600"
         >

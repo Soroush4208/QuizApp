@@ -11,7 +11,7 @@ function StartQuiz() {
         <p className="animate-pulse">Get start</p>
         <button
           onClick={() => {
-            return questionsDispatch({ type: "PAGE", payload: 1 });
+            return questionsDispatch({ type: "CHANGE_PAGE", payload: 1 });
           }}
           className="cursor-pointer hover:-rotate-45 start-quiz"
         >
