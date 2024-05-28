@@ -34,8 +34,10 @@ function SetupQuiz() {
     console.log("11");
     const amountNum = Number(amount);
     if (amountNum < 5 || amountNum > 55) {
+      console.log("11");
       setValidation("Please Enter A Number Between 5 And 55");
     } else {
+      console.log("11");
       setValidation("");
       getData();
       questionsDispatch({ type: "CHANGE_PAGE", payload: 2 });
@@ -63,7 +65,8 @@ function SetupQuiz() {
               onChange={(e) => setAmount(e.target.value)}
             />
             <span
-              className={`text-red-600 text-xs font-bold ${amount && "hidden"}`}
+              className={"text-red-600 text-xs font-bol"}
+              // className={`text-red-600 text-xs font-bold ${amount ? "hidden" : ""}`}
             >
               {validation}
             </span>
@@ -95,7 +98,7 @@ function SetupQuiz() {
                 </option>
               ))}
             </select>
-            <div className="flex flex-col justify-center items-center hover:scale-150 mt-2">
+            <div className="flex flex-col justify-center items-center hover:scale-150 mt-10">
               <button
                 type="submit"
                 className="flex items-center text-xl font-bold font-Quiz hover:text-red-700"

@@ -1,4 +1,4 @@
-import MAN_ICON from "../../assets/svg/man.svg";
+import MAN_ICON from "../../assets/img/laptop.png";
 
 function Loading() {
   return (
