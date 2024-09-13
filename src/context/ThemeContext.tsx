@@ -1,9 +1,28 @@
-import { createContext, useReducer } from "react";
-import Header from "../layout/Header/Header";
+import { createContext, ReactNode, useReducer } from "react";
 
-export const ThemeContext = createContext(Header);
+// تعریف اینترفیس برای State
+interface ThemeState {
+  mode: string;
+}
 
-function themeReducer(state, action) {
+// تعریف اینترفیس برای Action
+interface ThemeAction {
+  type: "CHANGE_MODE";
+  payload: string;
+}
+
+// تعریف تایپ کانتکست
+interface ThemeContextType extends ThemeState {
+  changeMode: (mode: string) => void;
+}
+
+// ایجاد ThemeContext با تایپ مشخص
+export const ThemeContext = createContext<ThemeContextType | undefined>(
+  undefined
+);
+
+// تعریف reducer با تایپ مشخص برای state و action
+function themeReducer(state: ThemeState, action: ThemeAction): ThemeState {
   switch (action.type) {
     case "CHANGE_MODE":
       return { ...state, mode: action.payload };
@@ -12,15 +31,26 @@ function themeReducer(state, action) {
   }
 }
 
-export function ThemeProvider({ children }) {
-  const [state, dispatch] = useReducer(themeReducer, {
-    mode: "dark",
-  });
-  function changeMode(mode) {
-    dispatch({ type:"CHANGE_MODE", payload: mode });
+// تعریف تایپ برای props در ThemeProvider
+interface ThemeProviderProps {
+  children: ReactNode;
+}
+
+export function ThemeProvider({ children }: ThemeProviderProps) {
+  const [state, dispatch] = useReducer<React.Reducer<ThemeState, ThemeAction>>(
+    themeReducer,
+    {
+      mode: "dark",
+    }
+  );
+
+  // تعریف changeMode با تایپ مشخص
+  function changeMode(mode: string) {
+    dispatch({ type: "CHANGE_MODE", payload: mode });
   }
+
   return (
-    <ThemeContext.Provider value={{ ...state,changeMode }}>
+    <ThemeContext.Provider value={{ ...state, changeMode }}>
       {children}
     </ThemeContext.Provider>
   );
