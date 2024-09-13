@@ -49,21 +49,6 @@
   animation-iteration-count: infinite;
 }
 
-.theme-body-light {
-  background-image: radial-gradient(
-    circle at top right,
-    rgb(13, 141, 190) 0%,
-    rgb(13, 141, 190) 46%,
-    rgb(22, 153, 204) 46%,
-    rgb(22, 153, 204) 49%,
-    rgb(31, 166, 217) 49%,
-    rgb(31, 166, 217) 52%,
-    rgb(40, 178, 231) 52%,
-    rgb(40, 178, 231) 54%,
-    rgb(49, 190, 244) 54%,
-    rgb(49, 190, 244) 100%
-  );
-}
 .theme-body-mobile {
   background-image: radial-gradient(
     circle at top right,
@@ -94,6 +79,21 @@
       rgb(37, 37, 38) 54%,
       rgb(48, 50, 51) 54%,
       rgb(70, 70, 70) 100%
+    );
+  }
+  .theme-body-dark.theme-body-light {
+    background-image: radial-gradient(
+      circle at top right,
+      rgb(13, 141, 190) 0%,
+      rgb(13, 141, 190) 46%,
+      rgb(22, 153, 204) 46%,
+      rgb(22, 153, 204) 49%,
+      rgb(31, 166, 217) 49%,
+      rgb(31, 166, 217) 52%,
+      rgb(40, 178, 231) 52%,
+      rgb(40, 178, 231) 54%,
+      rgb(49, 190, 244) 54%,
+      rgb(49, 190, 244) 100%
     );
   }
   .background-Quiz {
