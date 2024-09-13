@@ -5,20 +5,6 @@ import Loading from "../Loading/Loading";
 function Quiz() {
   const { questionsState, questionsDispatch } = useContextQuestions();
   const [answers, setAnswers] = useState<string[]>([]);
-
-  //! (score/questionsState.arrayQuestions.length)*100
-
-  // useEffect(() => {
-  //   if (questionsState.arrayQuestions.length > 0) {
-  //     const answer = questionsState.arrayQuestions[
-  //       currentQuestionIndex
-  //     ].incorrect_answers.concat(
-  //       questionsState.arrayQuestions[currentQuestionIndex].correct_answer
-  //     );
-  //     setAnswers(answer);
-  //   }
-  // }, [currentQuestionIndex, questionsState.arrayQuestions]);
-
   useEffect(() => {
     if (questionsState.arrayQuestions.length > 0) {
       const answer = questionsState.arrayQuestions[
@@ -40,7 +26,6 @@ function Quiz() {
   ) {
     return <Loading />;
   }
-  console.log(answers);
 
   function handleNext(e: React.MouseEvent<HTMLButtonElement>) {
     if (questionsState.index < questionsState.arrayQuestions.length - 1) {
